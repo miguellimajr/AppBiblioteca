@@ -1,6 +1,6 @@
 package negocio;
 
-public class Livro {
+public class Carro {
 	
 	String nome; 
 	int isbn;
