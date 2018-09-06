@@ -7,10 +7,9 @@ public class Carro {
 	private String marca;
 	private String modelo;
 	private int ano;
-	private float valorCarro;
-	//implementação futura: valor do empréstimo será baseado no valor do carro, idade do motorista e seguro
+	private float valorCarro;	
 	private float seguro;
-	
+	private String adicionais[];
 	
 	
 	
@@ -23,6 +22,8 @@ public class Carro {
 		this.ano = ano;
 		this.valorCarro = valorCarro;		
 		this.seguro = seguro;
+		this.adicionais = adicionais;
+		
 	}
 
 	public void exibe() {
