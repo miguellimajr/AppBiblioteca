@@ -22,6 +22,18 @@ public class Emprestimo {
 	}
 	
 	
+	public void consultaAluguel() {
+		if (liberaAluguel()) {
+			System.out.printf("O Aluguel foi aprovado pelo Sistema.\n"
+					+"Valor da diaria: R$ %.2f\n",calculaAluguel());			
+			}
+		else {
+			System.out.printf("O Aluguel não foi aprovado pelo Sistema.\n");
+		}
+			
+		}
+	
+	
 	
 	public void exibe() {
 		

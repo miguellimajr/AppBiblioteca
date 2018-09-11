@@ -2,16 +2,16 @@ package negocio;
 
 public class Cliente {
 
-	private int numeroRegistro;
+	private String cpf;
 	private String nome;
 	private String telefone;
 	private String endereco;
 	private int idade;
 	private float rendaMensal;
 
-	public Cliente(int numeroRegistro, String nome, String telefone, String endereco, int idade, float rendaMensal) {
+	public Cliente(String cpf, String nome, String telefone, String endereco, int idade, float rendaMensal) {
 		super();
-		this.numeroRegistro = numeroRegistro;
+		this.cpf = cpf;
 		this.nome = nome;
 		this.telefone = telefone;
 		this.endereco = endereco;
@@ -22,13 +22,13 @@ public class Cliente {
 	public void exibe() {
 
 		System.out.printf("Nome do Cliente: %s \n"
-				+"Número de Registro: %d \n"
+				+"CPF: %s \n"
 				+"Telefone: %s \n" 
 				+"Endereço: %s \n"
 				+"Idade: %d \n"
 				+"Renda Mensal: R$ %.2f \n\n", 
 				nome,
-				numeroRegistro,
+				cpf,
 				telefone,
 				endereco,
 				idade,
@@ -36,12 +36,12 @@ public class Cliente {
 
 	}
 
-	public int getNumeroRegistro() {
-		return numeroRegistro;
+	public String getNumeroRegistro() {
+		return cpf;
 	}
 
-	public void setNumeroRegistro(int numeroRegistro) {
-		this.numeroRegistro = numeroRegistro;
+	public void setNumeroRegistro(String numeroRegistro) {
+		this.cpf = numeroRegistro;
 	}
 
 	public String getNome() {

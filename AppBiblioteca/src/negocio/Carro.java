@@ -13,18 +13,22 @@ public class Carro {
 	
 	
 	
-	public Carro(String nome, String placa, String marca, String modelo, int ano, float valorCarro,
-			 float seguro) {
+	
+	public Carro(String nome, String placa, String marca, String modelo, int ano, float valorCarro, float seguro,
+			String[] adicionais) {
+		super();
 		this.nome = nome;
 		this.placa = placa;
 		this.marca = marca;
 		this.modelo = modelo;
 		this.ano = ano;
-		this.valorCarro = valorCarro;		
+		this.valorCarro = valorCarro;
 		this.seguro = seguro;
 		this.adicionais = adicionais;
-		
 	}
+
+	
+
 
 	public void exibe() {
 		
@@ -33,9 +37,20 @@ public class Carro {
 				+"Marca: %s \n"
 				+"Modelo: %s \n"
 				+"Ano: %d \n"
-				+"Valor do Carro: %.2f \n\n",				
+				+"Valor do Carro: %.2f \n"
+				+ "Adicionais: ",				
 				nome, placa, marca, modelo,ano, valorCarro);
 		
+		
+		for (int i = 0; i < adicionais.length; i++) {
+			
+			System.out.printf("%s",adicionais[i]);
+			
+			System.out.printf("%s",(i<(adicionais.length-1)) ? ", " : ".\n\n");
+			
+		}
+			
+				
 	}
 
 	public String getNome() {
@@ -93,6 +108,14 @@ public class Carro {
 
 	public void setSeguro(float seguro) {
 		this.seguro = seguro;
+	}
+
+	public String[] getAdicionais() {
+		return adicionais;
+	}
+
+	public void setAdicionais(String[] adicionais) {
+		this.adicionais = adicionais;
 	}
 	
 
