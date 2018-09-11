@@ -44,8 +44,7 @@ public class Carro {
 		
 		for (int i = 0; i < adicionais.length; i++) {
 			
-			System.out.printf("%s",adicionais[i]);
-			
+			System.out.printf("%s",adicionais[i]);			
 			System.out.printf("%s",(i<(adicionais.length-1)) ? ", " : ".\n\n");
 			
 		}
