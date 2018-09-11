@@ -19,8 +19,7 @@ public class TestaAluguel {
 		e.setCarro(carro);
 		e.setCliente(cliente);
 		
-		e.getCarro().exibe();
-		e.getCliente().exibe();
+		e.exibe();
 		
 		
 		e.consultaAluguel();

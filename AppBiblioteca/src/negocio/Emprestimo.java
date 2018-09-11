@@ -37,6 +37,9 @@ public class Emprestimo {
 	
 	public void exibe() {
 		
+		carro.exibe();
+		cliente.exibe();
+		
 	}
 
 
