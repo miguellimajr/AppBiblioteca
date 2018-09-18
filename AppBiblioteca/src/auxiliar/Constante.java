@@ -2,5 +2,9 @@ package auxiliar;
 
 public class Constante {
 
-	public static final float TX_DESCONTO = 1500;
+	private static final float TX_DESCONTO = 10;
+
+	public static float getTxDesconto() {
+		return TX_DESCONTO;
+	}
 }

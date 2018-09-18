@@ -1,15 +1,17 @@
 package negocio;
 
+import auxiliar.Constante;
+
 public class Emprestimo {
 	
 	Carro carro;
-	Cliente cliente;
-	float desconto;
-	
-	
-	public float calculaAluguel() {
-		return (carro.getValorCarro() + carro.getSeguro())/100;			
+	Cliente cliente;	
 		
+	
+	public float calculaAluguel() {		
+		
+		return ((carro.getValorCarro() + carro.getSeguro())/100)*(1-(Constante.getTxDesconto()/100));
+				
 	}
 	
 	
@@ -25,10 +27,14 @@ public class Emprestimo {
 	public void consultaAluguel() {
 		if (liberaAluguel()) {
 			System.out.printf("O Aluguel foi aprovado pelo Sistema.\n"
-					+"Valor da diaria: R$ %.2f\n",calculaAluguel());			
+					+"Desconto promocional: %.0f %%\n"
+					+"Valor da diaria: R$ %.2f\n",
+					Constante.getTxDesconto(),
+					calculaAluguel());			
 			}
 		else {
 			System.out.printf("O Aluguel não foi aprovado pelo Sistema.\n");
+			
 		}
 			
 		}
@@ -41,19 +47,6 @@ public class Emprestimo {
 		cliente.exibe();
 		
 	}
-
-
-
-	public float getDesconto() {
-		return desconto;
-	}
-
-
-
-	public void setDesconto(float desconto) {
-		this.desconto = desconto;
-	}
-
 
 
 	public Carro getCarro() {
