@@ -1,11 +1,14 @@
 package negocio;
 
+import java.util.Calendar;
+
 import auxiliar.Constante;
 
-public class Emprestimo {
+public class Emprestimo implements Interface{
 	
 	Carro carro;
-	Cliente cliente;	
+	Cliente cliente;
+	Calendar data = Calendar.getInstance();
 		
 	
 	public float calculaAluguel() {		
@@ -26,14 +29,18 @@ public class Emprestimo {
 	
 	public void consultaAluguel() {
 		if (liberaAluguel()) {
-			System.out.printf("O Aluguel foi aprovado pelo Sistema.\n"
+			System.out.printf("No dia %s/%s o aluguel foi aprovado pelo Sistema.\n"
 					+"Desconto promocional: %.0f %%\n"
 					+"Valor da diaria: R$ %.2f\n",
+					data.get(Calendar.DATE),
+					data.get(Calendar.MONTH)+1,
 					Constante.getTxDesconto(),
 					calculaAluguel());			
 			}
 		else {
-			System.out.printf("O Aluguel não foi aprovado pelo Sistema.\n");
+			System.out.printf("No dia %s/%s o aluguel não foi aprovado pelo Sistema.\n",
+			data.get(Calendar.DATE),
+			data.get(Calendar.MONTH)+1);
 			
 		}
 			
@@ -45,6 +52,12 @@ public class Emprestimo {
 		
 		carro.exibe();
 		cliente.exibe();
+		
+	}
+	
+	@Override
+	public void imprimirTipo() {
+		// TODO Auto-generated method stub
 		
 	}
 
@@ -70,5 +83,8 @@ public class Emprestimo {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
+
+
+	
 
 }

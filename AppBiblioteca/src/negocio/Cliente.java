@@ -1,6 +1,6 @@
 package negocio;
 
-public class Cliente {
+public class Cliente implements Interface{
 
 	private String cpf;
 	private String nome;
@@ -34,6 +34,12 @@ public class Cliente {
 				idade,
 				rendaMensal);
 
+	}
+	
+	@Override
+	public void imprimirTipo() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	public String getNumeroRegistro() {
@@ -83,6 +89,8 @@ public class Cliente {
 	public void setRendaMensal(float rendaMensal) {
 		this.rendaMensal = rendaMensal;
 	}
+
+	
 	
 	
 	

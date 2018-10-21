@@ -1,6 +1,9 @@
 package negocio;
 
-public class Carro {
+import java.util.ArrayList;
+import java.util.List;
+
+public abstract class Carro {
 	
 	private String nome; 
 	private String placa;
@@ -9,11 +12,16 @@ public class Carro {
 	private int ano;
 	private float valorCarro;	
 	private float seguro;
-	private String adicionais[];
+	private String adicionais[];	
+	private List<String> lista = new ArrayList<String>(); 
 	
 	
 	
 	
+	public Carro() {
+		
+	}
+
 	public Carro(String nome, String placa, String marca, String modelo, int ano, float valorCarro, float seguro,
 			String[] adicionais) {
 		super();
@@ -25,6 +33,7 @@ public class Carro {
 		this.valorCarro = valorCarro;
 		this.seguro = seguro;
 		this.adicionais = adicionais;
+		this.imprimirTipo();
 	}
 
 	
@@ -38,8 +47,9 @@ public class Carro {
 				+"Modelo: %s \n"
 				+"Ano: %d \n"
 				+"Valor do Carro: %.2f \n"
+				+"Valor do Seguro: %.2f \n"
 				+ "Adicionais: ",				
-				nome, placa, marca, modelo,ano, valorCarro);
+				nome, placa, marca, modelo,ano, valorCarro,seguro);
 		
 		
 		for (int i = 0; i < adicionais.length; i++) {
@@ -47,10 +57,18 @@ public class Carro {
 			System.out.printf("%s",adicionais[i]);			
 			System.out.printf("%s",(i<(adicionais.length-1)) ? ", " : ".\n\n");
 			
-		}
-			
-				
+		}					
 	}
+	
+	
+	protected static void adicionarCabecalho(String nomeClasse) {
+		System.out.printf("\n#%s#\n\n", nomeClasse);
+		
+	}
+	
+	
+	 public abstract void imprimirTipo();
+	 
 
 	public String getNome() {
 		return nome;
@@ -115,6 +133,14 @@ public class Carro {
 
 	public void setAdicionais(String[] adicionais) {
 		this.adicionais = adicionais;
+	}
+
+	public List<String> getLista() {
+		return lista;
+	}
+
+	public void setLista(List<String> lista) {
+		this.lista = lista;
 	}
 	
 
